@@ -1,21 +1,19 @@
 package ru.sber.javaschool;
 
-import lombok.Setter;
-
 import java.io.*;
 import java.util.Scanner;
 
 public class SpaceCreator {
 
     public void execute() {
-        String path;
+        String text;
         String symbol;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите, пожалуйста, путь до файла:");
-        path = scanner.nextLine();
+        text = readFromFile(scanner.nextLine());
         System.out.println("Введите символ, который хотите заменить:");
         symbol = scanner.next();
-        writeInFile(changeOnSpace(readFromFile(path), symbol));
+        writeInFile(changeOnSpace(text, symbol));
         System.out.println("Done");
     }
 
